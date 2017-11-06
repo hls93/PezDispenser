@@ -11,11 +11,27 @@ public class Main {
         System.out.printf("FUN FACT: there are %d PEZ allowed in every dispenser", MAX_PEZ);
         PezDispenser dispenser = new PezDispenser("Donatello");
 
+        if (dispenser.isEmpty()) {
+            System.out.println("Dispenser is empty");
+        }
         System.out.println("Filling the dispenser with PEZ...");
         dispenser.fill();
 
-        if (dispenser.isEmpty()) {
-            System.out.println("Dispenser is empty");
+        if (!dispenser.isEmpty()) {
+            System.out.println("Dispenser is full");
+        }
+
+        while (dispenser.dispense()) {
+            System.out.println("chomp");
+        }
+        if (dispenser.isEmpty()){
+            System.out.println("no more Pez");
+        }
+
+        dispenser.fill(4);
+        dispenser.fill(2);
+        while (dispenser.dispense()) {
+            System.out.println("eat");
         }
 
     }
