@@ -33,6 +33,14 @@ public class Main {
         while (dispenser.dispense()) {
             System.out.println("eat");
         }
+        try {
+            dispenser.fill(400);
+            System.out.println();
+        } catch (IllegalArgumentException iae){
+            System.out.println("Illegal");
+//            System.out.println(iae.getMessage(), "The error was %s");
+        }
+
 
     }
 }
